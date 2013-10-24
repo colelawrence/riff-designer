@@ -84,6 +84,4 @@ function NotFound(msg){
     Error.call(this, msg);
     Error.captureStackTrace(this, arguments.callee);
 }
-
-
 console.log('Listening on http://0.0.0.0:' + port );

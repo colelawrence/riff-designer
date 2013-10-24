@@ -2,12 +2,13 @@
   "name": "riff-designer",
   "description": "Audio fabrication software",
   "author": "Cole R Lawrence <cole@zombiehippie.com>",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
   "dependencies": {
+    "coffee-script": "1.6.3",
     "connect": "1.8.5",
     "express": "2.5.2",
     "jade": "0.20.0",
-    "mongoose": "2.4.8",
+    "mongoose": "3.6.x",
     "socket.io": "0.8.7"
   },
   "devDependencies": {
@@ -15,5 +16,12 @@
     "mocha": "*",
     "should": "*"
   },
-  "engine": "node >= 0.6.6"
+  "engine": "node >= 0.6.6",
+  "subdomain": "riff",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
 }
