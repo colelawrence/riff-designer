@@ -6,17 +6,16 @@ block content
 			| Play
 		.container
 			#RiffModule.ichTemplate
-				.riff-module
+				.riff-module(id="{{name}}")
 					.preview
-					.title riff
+					.title {{name}}
 					.edit
-	#LayerView.layer-view
+	#RiffView.riff-view
 		.header
 			.back
 			.title Project
 		.container
 			#LayerModule.ichTemplate
-				.layer-module.waveform
+				.layer-module.waveform(id="{{name}}")
 					.preview
-						canvas(height="80px", width="740px").canvas-preview
 					.edit
