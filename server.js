@@ -68,6 +68,17 @@ server.get('/', function(req,res){
   });
 });
 
+server.get('/about', function(req,res){
+  res.render('about.jade', {
+    locals : { 
+              title : 'about riff-designer'
+             ,description: 'The about page for the audio fabrication software: riff-designer'
+             ,author: 'Cole R Lawrence'
+             ,analyticssiteid: 'XXXXXXX' 
+            }
+  });
+});
+
 
 //A Route for Creating a 500 Error (Useful to keep around)
 server.get('/500', function(req, res){
