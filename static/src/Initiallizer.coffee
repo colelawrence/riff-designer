@@ -1,2 +1,4 @@
-$('body').onload = (e) ->
-	$('#LayerView').append ich.LayerModule()
+$(document).on "ready", (e) ->
+	for template in $(".ichTemplate")
+		console.log template.id
+		ich.addTemplate(template.id, template.innerHTML)

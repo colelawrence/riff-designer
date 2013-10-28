@@ -1,3 +1,22 @@
 extends layout
 
 block content
+	#ProjectView.project-view
+		.header
+			| Play
+		.container
+			#RiffModule.ichTemplate
+				.riff-module
+					.preview
+					.title riff
+					.edit
+	#LayerView.layer-view
+		.header
+			.back
+			.title Project
+		.container
+			#LayerModule.ichTemplate
+				.layer-module.waveform
+					.preview
+						canvas(height="80px", width="740px").canvas-preview
+					.edit
