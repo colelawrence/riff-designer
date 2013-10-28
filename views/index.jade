@@ -1,21 +1,22 @@
 extends layout
 
 block content
-	#ProjectView.project-view
-		.header
-			| Play
-		.container
-			#RiffModule.ichTemplate
-				.riff-module(id="{{name}}")
-					.preview
-					.title {{name}}
-					.edit
-	#RiffView.riff-view
-		.header
-			.back
-			.title Project
-		.container
-			#LayerModule.ichTemplate
-				.layer-module.waveform(id="{{name}}")
-					.preview
-					.edit
+	#Project
+		#ProjectView.project-view
+			.header
+				| Play
+			.container
+				#RiffViewOpen.ichTemplate
+					.riff-view-open(id="{{name}}",onclick="openRiff(event);")
+						.preview
+						.title {{name}}
+						.edit
+		#RiffView.riff-view
+			.header
+				.back
+				.title Project
+			.container
+				#RiffModule.ichTemplate
+					.riff-module(id="{{name}}",onclick="editRiff(event);")
+						.preview
+						.edit
