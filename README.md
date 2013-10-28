@@ -1,4 +1,6 @@
-riff-designer
+<p align="center">
+  <img src="https://raw.github.com/ZombieHippie/riff-designer/master/static/img/riff-designer-metro-logo.png" alt="riff-designer metro logo" />
+</p>
 ======
 Audio fabrication software
 
