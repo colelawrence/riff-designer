@@ -1,11 +1,11 @@
 class EventHandler
-	constructor: (@project) ->
+	constructor: (@app) ->
 
+	newRiff:()=>
+		@app.project.newRiff()
 	openRiff:(name) =>
-		modules = @project.getRiff(name).getModules()
-		for module in modules
-			$(@project.riffViewContainerSelector).append module.getTemplate()
-	editLayer:(riffName, name) =>
-		modules = @project.getRiff(riffName).getModule(name)
-		for module in modules
-			$(@project.riffViewContainerSelector).append module.getTemplate()
+		@app.project.openRiff(name)
+	closeRiff:() =>
+		@app.project.closeRiff()
+	editModule:(name) =>
+		@app.project.getActiveRiff().editModule(name)

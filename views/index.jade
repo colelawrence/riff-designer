@@ -5,18 +5,22 @@ block content
 		#ProjectView.project-view
 			.header
 				| Play
+			.toolbar
+				.new-riff(onclick="evt.newRiff();") NEW
 			.container
 				#RiffViewOpen.ichTemplate
-					.riff-view-open(id="{{name}}",onclick="openRiff(event);")
+					.riff-view-open(id="{{riffName}}")
 						.preview
-						.title {{name}}
-						.edit
+						.title {{riffName}}
+						.edit(onclick="evt.openRiff('{{riffName}}');")
 		#RiffView.riff-view
 			.header
-				.back
+				.back(onclick="evt.closeRiff();")
 				.title Project
 			.container
 				#RiffModule.ichTemplate
-					.riff-module(id="{{name}}",onclick="editRiff(event);")
+					.riff-module(id="{{moduleName}}")
+						.title {{moduleName}}
 						.preview
-						.edit
+							canvas(id="canvas-{{moduleName}}")
+						.edit(onclick="evt.editModule('{{moduleName}}');")

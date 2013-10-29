@@ -103,16 +103,19 @@ textarea {
 .project-view {width:800px; float:left;}
 .project-view .header { width:100%; height: 300px;
     background-color: #E0EFF1;}
+.project-view .toolbar {height:40px; background-color: #0088BD}
+.project-view .toolbar .new-riff {height:40px; width:40px; background: white}
+.project-view .toolbar .new-riff:hover {cursor:pointer;background: #f5faff}
 .project-view .container { width:100%;}
-.project-view .container .riff-module { width:100%; height:40px; 
+.project-view .container .riff-view-open { width:100%; height:40px; 
     background-color: #dbdbdb;}
-.project-view .container .riff-module .preview { width:40px; height:40px;
+
+.project-view .container .riff-view-open .preview { width:40px; height:40px;
     border-radius: 20px; background-color: #444; float:left;}
-.project-view .container .riff-module .preview:hover {cursor:pointer;}
-.project-view .container .riff-module .title {float:left;}
-.project-view .container .riff-module .edit { width:40px; height:40px;
+.project-view .container .riff-view-open .title {float:left;}
+.project-view .container .riff-view-open .edit { width:40px; height:40px;
     border-radius: 20px; background-color: #666; float:right;}
-.project-view .container .riff-module .edit:hover {cursor:pointer;}
+.project-view .container .riff-view-open .edit:hover { cursor:pointer;}
 
 .riff-view {width:800px; float:left;}
 .riff-view .header { height:60px;
@@ -122,12 +125,17 @@ textarea {
 .riff-view .header .title { color:white;}
 .riff-view .container { width:100%;
     background-color: #dbdbdb}
-.riff-view .container .riff-module { width:100%; height:80px;
+.riff-view .container .riff-module { width:100%; height:80px; position:relative;
 background-color: #f5f5f5}
-.riff-view .container .riff-module .preview {height:100%;padding-left:30px; float: left} 
+.riff-view .container .riff-module .title { padding-left: 30px; 
+    height:1em; margin-bottom: -1em}
+.riff-view .container .riff-module .preview {padding-left: 30px;height:100%; float:left;}
+.riff-view .container .riff-module .preview canvas {width:740px; height:80px;} 
 .riff-view .container .riff-module .edit {width:30px; height:100%; float:right;
     border-radius: 15px;background-color: black;}
 .riff-view .container .riff-module .edit:hover {cursor:pointer;}
+.riff-view .container .riff-module.under-construction {height:300px;}
+.riff-view .container .riff-module.under-construction .preview canvas {height:300px;}
 
 
 

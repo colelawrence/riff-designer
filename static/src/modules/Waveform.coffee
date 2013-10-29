@@ -1,5 +1,7 @@
-class Waveform extends RiffModule
-	constructor: (@riffViewSelector) ->
-		super(@riffViewSelector, "Waveform")
+class Waveform extends Node
+	constructor: ->
+		super("", "Waveform")
 	getTemplate: () =>
-		ich.RiffModule name:@name
+		ich.RiffModule moduleName:@name
+	editModule: () =>
+		@$().toggleClass "under-construction"
