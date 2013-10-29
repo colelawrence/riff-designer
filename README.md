@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.github.com/ZombieHippie/riff-designer/master/static/img/riff-designer-metro-logo.png" alt="riff-designer metro logo" />
+  <a href="http://riff.jit.su/"><img src="https://raw.github.com/ZombieHippie/riff-designer/master/static/img/riff-designer-metro-logo.png" alt="riff-designer metro logo" /></a>
 </p>
 ======
 Audio fabrication software
