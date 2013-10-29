@@ -25,9 +25,8 @@ html.no-js(lang='en')
     block footer
       footer
         script(src='js/lib/jquery-2.0.3.min.js')
-        script(src='js/lib/ICanHaz.min.js')
-        script(src='js/script.js')
         //if lt IE 7
           script(defer, src='//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js')
           script(defer)
             window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+        block scripts

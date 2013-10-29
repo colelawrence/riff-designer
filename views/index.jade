@@ -22,5 +22,9 @@ block content
 					.riff-module(id="{{moduleName}}")
 						.title {{moduleName}}
 						.preview
-							canvas(id="canvas-{{moduleName}}")
+							canvas
 						.edit(onclick="evt.editModule('{{moduleName}}');")
+block scripts
+    script(src='js/lib/ICanHaz.min.js')
+    script(src='js/lib/paper-full.min.js')
+    script(src='js/script.js')

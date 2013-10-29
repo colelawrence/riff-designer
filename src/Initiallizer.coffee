@@ -1,3 +1,6 @@
+#_require Application.coffee
+#_require EventHandler.coffee
+
 window.app = null
 $(document).on "ready", (e) ->
 	for template in $(".ichTemplate")

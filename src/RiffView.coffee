@@ -1,3 +1,5 @@
+#_require Utility/Node.coffee
+
 class RiffView extends Node
 	constructor:(@riffViewSelector) ->
 		super(@riffViewSelector, "RiffViewOpen")

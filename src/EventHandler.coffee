@@ -1,3 +1,5 @@
+
+
 class EventHandler
 	constructor: (@app) ->
 

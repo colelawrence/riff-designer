@@ -1,3 +1,5 @@
+#_require ProjectView.coffee
+
 class Application
 	constructor:() ->
 		@projectViewSelector = "#ProjectView>.container"
