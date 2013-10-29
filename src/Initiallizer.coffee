@@ -2,7 +2,8 @@
 #_require EventHandler.coffee
 
 window.app = null
-$(document).on "ready", (e) ->
+window.modules = {}
+$(document).on "ready", (e) =>
 	for template in $(".ichTemplate")
 		console.log template.id
 		ich.addTemplate(template.id, template.innerHTML)

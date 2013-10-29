@@ -7,7 +7,7 @@ task 'build', 'Build riff-designer using Rehab', sbuild = ->
   files = new Rehab().process './src'
 
   to_single_file = "--join static/js/script.js"
-  from_files = "--compile #{files.join ' '}"
+  from_files = "-bc #{files.join ' '}"
 
   exec "coffee #{to_single_file} #{from_files}", (err, stdout, stderr) ->
     throw err if err
@@ -18,7 +18,7 @@ task 'watch', 'Watch riff-designer files and compile using Rehab', sbuild = ->
   files = new Rehab().process './src'
 
   to_single_file = "--join static/js/script.js"
-  from_files = "-cw #{files.join ' '}"
+  from_files = "-bcw #{files.join ' '}"
 
   exec "coffee #{to_single_file} #{from_files} ", (err, stdout, stderr) ->
     throw err if err
