@@ -1,0 +1,1 @@
+coffee -j static/js/script.js -cw static/src/
