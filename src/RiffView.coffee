@@ -8,6 +8,7 @@ class RiffView extends Node
 		super(@riffViewSelector, "RiffViewOpen")
 		@addChild new Waveform()
 		@addChild new Drawing()
+		@openRiff()
 	getModules:()=>
 		@getChildren()
 	editModule:(name)=>

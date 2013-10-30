@@ -9,7 +9,8 @@ class Drawing extends RiffModule
 		textItem = new @paper.PointText
 			content: 'Click and drag to draw a line.',
 			point: new @paper.Point(20, 30),
-			fillColor: 'black',
+			fillColor: 'black'
+
 		@paper.tool.onMouseDown = (event) =>
 
 			# If we produced a path before, deselect it:
