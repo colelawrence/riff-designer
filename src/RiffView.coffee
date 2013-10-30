@@ -8,8 +8,8 @@ class RiffView extends Node
 		super(@riffViewSelector, "RiffViewOpen")
 		@addChild new Waveform()
 		@addChild new Drawing()
-	getModules:(name)=>
-		@getChildren(name)
+	getModules:()=>
+		@getChildren()
 	editModule:(name)=>
 		@setActiveChild(name)
 		@getChild(name).editModule()
@@ -17,9 +17,9 @@ class RiffView extends Node
 		@getActiveChild()
 	openRiff: =>
 		@closeRiff()
-		for module in @getModules(name)
-			$(@riffViewSelector).append module.getTemplate()
+		for module in @getModules()
+			module.$().show()
 	closeRiff: =>
-		$(@riffViewSelector).empty()
+		$(@riffViewSelector).children().hide()
 	getTemplate: () =>
 		ich.RiffViewOpen riffName:@name
