@@ -1,6 +1,6 @@
-#_require ../RiffModule.coffee
+#_require ../BezierModule.coffee
 
-class Waveform extends RiffModule
+class Waveform extends BezierModule
 	constructor: ->
 		super("Waveform")
 	init: =>

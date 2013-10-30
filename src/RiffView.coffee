@@ -1,7 +1,7 @@
 #_require Utility/Node.coffee
 
-#_require Modules/Drawing.coffee
-#_require Modules/Waveform.coffee
+#_require Modules/BezierModules/Drawing.coffee
+#_require Modules/BezierModules/Waveform.coffee
 
 class RiffView extends Node
 	constructor:(@riffViewSelector) ->

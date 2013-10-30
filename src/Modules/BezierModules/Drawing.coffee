@@ -1,6 +1,6 @@
-#_require ../RiffModule.coffee
+#_require ../BezierModule.coffee
 
-class Drawing extends RiffModule
+class Drawing extends BezierModule
 	constructor: ->
 		super("Drawing")
 	init: =>
