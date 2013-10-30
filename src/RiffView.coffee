@@ -1,9 +1,13 @@
 #_require Utility/Node.coffee
 
+#_require Modules/Drawing.coffee
+#_require Modules/Waveform.coffee
+
 class RiffView extends Node
 	constructor:(@riffViewSelector) ->
 		super(@riffViewSelector, "RiffViewOpen")
 		@addChild new Waveform()
+		@addChild new Drawing()
 	getModules:(name)=>
 		@getChildren(name)
 	editModule:(name)=>
