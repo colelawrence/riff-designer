@@ -6,7 +6,6 @@ class ProjectView extends Node
 		@newRiff()
 	newRiff:()=>
 		riff = @addChild new RiffView(@riffViewSelector)
-		riff.setActiveRiff
 	openRiff:(name)=>
 		@setActiveChild(name)
 		@getChild(name).openRiff()
@@ -14,3 +13,4 @@ class ProjectView extends Node
 		@getActiveChild()
 	closeRiff: =>
 		@getActiveChild().closeRiff()
+		@setActiveChild(null)

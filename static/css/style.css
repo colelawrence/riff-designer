@@ -115,6 +115,7 @@ textarea {
 .project-view .container .riff-view-open .title {float:left;}
 .project-view .container .riff-view-open .edit { width:40px; height:40px;
     border-radius: 20px; background-color: #666; float:right;}
+.project-view .container .riff-view-open.active .edit { background-color: #999 }
 .project-view .container .riff-view-open .edit:hover { cursor:pointer;}
 
 .riff-view {width:800px; float:left;}
