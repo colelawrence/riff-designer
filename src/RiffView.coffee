@@ -20,6 +20,20 @@ class RiffView extends Node
 		@closeRiff()
 		for module in @getModules()
 			module.$().show()
+	playRiff: (rate = 22000, seconds = 1, hz = 80) =>
+		data = null
+		for module in @getModules()
+			if module.getRiffData?
+				data = module.getRiffData(rate / hz)
+		if data?
+			data_ = []
+			for [1..hz]
+				data_.concat data
+			data = []
+			for [1..seconds]
+				data.concat data_
+		Riff data
+			
 	closeRiff: =>
 		$(@riffViewSelector).children().hide()
 	getTemplate: () =>

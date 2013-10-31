@@ -6,13 +6,13 @@ block content
 			.header
 				| Play
 			.toolbar
-				.new-riff(onclick="evt.newRiff();") NEW
+				.new-riff.button.plus_png(onclick="evt.newRiff();")
 			.container
 				#RiffViewOpen.ichTemplate
 					.riff-view-open(id="{{riffName}}")
-						.preview
+						.preview.button.play_png(onclick="evt.playRiff('{{riffName}}');")
 						.title {{riffName}}
-						.edit(onclick="evt.openRiff('{{riffName}}');")
+						.edit.button.inscribe_png(onclick="evt.openRiff('{{riffName}}');")
 		#RiffView.riff-view
 			.header
 				.back(onclick="evt.closeRiff();")
@@ -21,11 +21,13 @@ block content
 				#RiffModule.ichTemplate
 					.riff-module(id="{{moduleName}}")
 						//-.title {{moduleName}}
+						.buttons
 						.preview
 							canvas
-						.edit(onclick="evt.editModule('{{moduleName}}');")
+						.edit.button.inscribe_png(onclick="evt.editModule('{{moduleName}}');")
 
 block scripts
 	script(src='js/lib/ICanHaz.min.js')
 	script(src='js/lib/paper-full.min.js')
+	script(src='js/lib/riffwave.min.js')
 	script(src='js/script.js')

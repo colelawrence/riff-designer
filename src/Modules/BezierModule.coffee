@@ -3,8 +3,18 @@
 class BezierModule extends RiffModule
 	constructor: (prefix) ->
 		super(prefix)
+		@path = undefined
+	getYOnPath: (x) =>
+		@Xaxis.position.x = x
+		intersections = @path.getIntersections(Xaxis)
+		if intersections.length is 0
+			null
+		else
+			intersections[0].point.y
 	init: =>
-		path = undefined
+		@Xaxis = new @paper.Path.Line
+			from:[0, 0]
+			to:[0, @paper.view.viewSize.height]
 		guide = new @paper.Path.Line
 			from:[0, 0]
 			to:[0, @paper.view.viewSize.height]
@@ -18,11 +28,11 @@ class BezierModule extends RiffModule
 		@paper.tool.onMouseDown = (event) =>
 
 			# If we produced a path before, deselect it:
-			if (path)
-				path.remove()
+			if (@path)
+				@path.remove()
 
 			# Create a new path and set its stroke color to black:
-			path = new @paper.Path
+			@path = new @paper.Path
 				segments: [event.point],
 				strokeColor: 'black',
 				# Select the path, so we can see its segment points:
@@ -30,19 +40,18 @@ class BezierModule extends RiffModule
 		# While the user drags the mouse, points are added to the path
 		# at the position of the mouse:
 		@paper.tool.onMouseDrag = (event) =>
-			path.add(event.point)
+			@path.add(event.point)
 		# When the mouse is released, we simplify the path:
 		@paper.tool.onMouseUp = (event) =>
 
 			# When the mouse is released, simplify it:
-			path.simplify(10)
+			@path.simplify(10)
 
 			# Select the path, so we can see its segments:
-			path.fullySelected = true
+			@path.fullySelected = true
 		showIntersections = (path1, path2) ->
 			intersections = path1.getIntersections(path2)
 			for inter in intersections
-				console.log inter.point.y
 				new @paper.Path.Circle({
 					center: inter.point,
 					radius: 5,
@@ -50,5 +59,5 @@ class BezierModule extends RiffModule
 				}).removeOnMove()
 		@paper.tool.onMouseMove = (event) =>
 			guide.position.x = event.point.x
-			if path?
-				showIntersections guide, path
+			if @path?
+				showIntersections guide, @path

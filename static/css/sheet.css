@@ -1,0 +1,131 @@
+.inscribe_png {
+   background: url("sheet.png") no-repeat -652px -0px;
+   width:  32px;
+   height: 32px;
+}
+
+.pencil_png {
+   background: url("sheet.png") no-repeat -652px -32px;
+   width:  32px;
+   height: 32px;
+}
+
+.pen_png {
+   background: url("sheet.png") no-repeat -556px -0px;
+   width:  32px;
+   height: 32px;
+}
+
+.crop_png {
+   background: url("sheet.png") no-repeat -588px -0px;
+   width:  32px;
+   height: 32px;
+}
+
+.erase_png {
+   background: url("sheet.png") no-repeat -620px -0px;
+   width:  32px;
+   height: 32px;
+}
+
+.riff-designer-metro-logo_png {
+   background: url("sheet.png") no-repeat -0px -0px;
+   width:  524px;
+   height: 186px;
+}
+
+.play_png {
+   background: url("sheet.png") no-repeat -684px -0px;
+   width:  32px;
+   height: 32px;
+}
+
+.stop_png {
+   background: url("sheet.png") no-repeat -524px -32px;
+   width:  32px;
+   height: 32px;
+}
+
+.pause_png {
+   background: url("sheet.png") no-repeat -556px -32px;
+   width:  32px;
+   height: 32px;
+}
+
+.loop_png {
+   background: url("sheet.png") no-repeat -588px -32px;
+   width:  32px;
+   height: 32px;
+}
+
+.edit-points_png {
+   background: url("sheet.png") no-repeat -620px -32px;
+   width:  32px;
+   height: 32px;
+}
+
+.minus_png {
+   background: url("sheet.png") no-repeat -524px -0px;
+   width:  32px;
+   height: 32px;
+}
+
+.plus_png {
+   background: url("sheet.png") no-repeat -684px -32px;
+   width:  32px;
+   height: 32px;
+}
+
+.exit_png {
+   background: url("sheet.png") no-repeat -524px -64px;
+   width:  32px;
+   height: 32px;
+}
+
+.mixtape_png {
+   background: url("sheet.png") no-repeat -556px -64px;
+   width:  32px;
+   height: 32px;
+}
+
+.settings_png {
+   background: url("sheet.png") no-repeat -588px -64px;
+   width:  32px;
+   height: 32px;
+}
+
+.mic_png {
+   background: url("sheet.png") no-repeat -620px -64px;
+   width:  32px;
+   height: 32px;
+}
+
+.vol-0_png {
+   background: url("sheet.png") no-repeat -652px -64px;
+   width:  32px;
+   height: 32px;
+}
+
+.vol-1_png {
+   background: url("sheet.png") no-repeat -684px -64px;
+   width:  32px;
+   height: 32px;
+}
+
+.vol-2_png {
+   background: url("sheet.png") no-repeat -524px -96px;
+   width:  32px;
+   height: 32px;
+}
+
+.vol-3_png {
+   background: url("sheet.png") no-repeat -556px -96px;
+   width:  32px;
+   height: 32px;
+}
+
+.save_png {
+   background: url("sheet.png") no-repeat -588px -96px;
+   width:  32px;
+   height: 32px;
+}

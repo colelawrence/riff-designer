@@ -7,6 +7,8 @@ class EventHandler
 		@app.project.newRiff()
 	openRiff:(name) =>
 		@app.project.openRiff(name)
+	playRiff:(name) =>
+		@app.project.playRiff(name)
 	closeRiff:() =>
 		@app.project.closeRiff()
 	editModule:(name) =>

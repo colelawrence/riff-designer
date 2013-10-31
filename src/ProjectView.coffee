@@ -9,6 +9,8 @@ class ProjectView extends Node
 	openRiff:(name)=>
 		@setActiveChild(name)
 		@getChild(name).openRiff()
+	playRiff:(name)=>
+		@getChild(name).playRiff()
 	getActiveRiff:()=>
 		@getActiveChild()
 	closeRiff: =>
