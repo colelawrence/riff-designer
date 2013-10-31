@@ -50,4 +50,5 @@ class BezierModule extends RiffModule
 				}).removeOnMove()
 		@paper.tool.onMouseMove = (event) =>
 			guide.position.x = event.point.x
-			showIntersections guide, path
+			if path?
+				showIntersections guide, path
