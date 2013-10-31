@@ -1,5 +1,5 @@
 {spawn, exec} = require 'child_process'
-Rehab = require './lib/rehab'
+Rehab = require 'rehab'
 
 option '-m', '--minify', 'minify after compilation'
 
