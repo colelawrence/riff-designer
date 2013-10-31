@@ -2,20 +2,15 @@
   "name": "riff-designer",
   "description": "Audio fabrication software",
   "author": "Cole R Lawrence <cole@zombiehippie.com>",
-  "version": "0.0.2-11",
+  "version": "0.0.2-12",
   "dependencies": {
-    "coffee-script": "1.6.x",
     "connect": "1.8.x",
     "express": "2.5.x",
-    "jade": "0.20.x",
-    "mongoose": "3.6.x",
-    "socket.io": "0.8.x"
+    "jade": "0.20.x"
   },
   "devDependencies": {
-    "vows": "0.5.x",
-    "wrench": "*",
-    "mocha": "*",
-    "should": "*"
+    "coffee-script": "1.6.x",
+    "rehab":"https://github.com/Vizir/rehab/tarball/master"
   },
   "repository": {
     "type": "git",
