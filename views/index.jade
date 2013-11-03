@@ -6,13 +6,16 @@ block content
 			.header
 				| Play
 			.toolbar
-				.new-riff.button.plus_png(onclick="evt.newRiff();")
+				.new-riff.button(onclick="evt.newRiff();")
+					.plus_png
 			.container
 				#RiffViewOpen.ichTemplate
 					.riff-view-open(id="{{riffName}}")
-						.preview.button.play_png(onclick="evt.playRiff('{{riffName}}');")
+						.preview.button(onclick="evt.playRiff('{{riffName}}');")
+							.play_png
 						.title {{riffName}}
-						.edit.button.inscribe_png(onclick="evt.openRiff('{{riffName}}');")
+						.edit.button(onclick="evt.openRiff('{{riffName}}');")
+							.inscribe_png
 		#RiffView.riff-view
 			.header
 				.back(onclick="evt.closeRiff();")
@@ -23,8 +26,9 @@ block content
 						//-.title {{moduleName}}
 						.buttons
 						.preview
-							canvas
-						.edit.button.inscribe_png(onclick="evt.editModule('{{moduleName}}');")
+							canvas.no-select
+						.edit.button(onclick="evt.editModule('{{moduleName}}');")
+							.inscribe_png
 
 block scripts
 	script(src='js/lib/ICanHaz.min.js')
