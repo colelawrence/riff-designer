@@ -1,12 +1,13 @@
 #_require ../RiffModule.coffee
 
 class BezierModule extends RiffModule
-	constructor: (prefix) ->
-		super(prefix)
-		@path = undefined
+	constructor: (prefix, options = {}) ->
+		super(prefix, options)
+		@path = null
+		@Xaxis = null
 	getYOnPath: (x) =>
 		@Xaxis.position.x = x
-		intersections = @path.getIntersections(Xaxis)
+		intersections = @path.getIntersections(@Xaxis)
 		if intersections.length is 0
 			null
 		else

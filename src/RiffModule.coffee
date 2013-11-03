@@ -1,7 +1,7 @@
 #_require Utility/Node.coffee
 
 class RiffModule extends Node
-	constructor:(prefix)->
+	constructor:(prefix, @options)->
 		super("", prefix)
 		@isInit = false
 		@paper = new paper.PaperScope()
