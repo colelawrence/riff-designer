@@ -12,7 +12,7 @@ class SpeedModifier extends BezierModule
 		window.gg = @
 
 	heightToHz: (h) =>
-			@options.hz * ((h / @paper.view.size.height) * @heightRange + @options.lowerBounds)
+			@options.hz * (((@paper.view.size.height - h) / @paper.view.size.height) * @heightRange + @options.lowerBounds)
 	getStep: (x) =>
 		result = {}
 		result.step = @getYOnPath x
