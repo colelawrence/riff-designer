@@ -4,6 +4,7 @@
 window.app = null
 window.evt = null
 window.modules = {}
+window.tool = {}
 $(document).on "ready", (e) ->
 	for template in $(".ichTemplate")
 		console.log template.id
