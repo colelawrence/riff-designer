@@ -1,6 +1,9 @@
 extends layout
 
 block content
+	#Button.ichTemplate
+		.button(onclick="{{onclick}}")
+			div(class="{{sprite}}")
 	#Project
 		#ProjectView.project-view
 			.header

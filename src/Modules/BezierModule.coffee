@@ -7,13 +7,14 @@ class BezierModule extends RiffModule
 		@Xaxis = null
 		@tool = "Pencil"
 		@data = {}
-
+		@tools = ["Pen", "Pencil"]
 	setEditingTool: (toolName) =>
+		console.log @name, toolName
 		# unset
 		@paper.tool[name] = undefined for name, method of window.tool[@tool].events
 		# set
 		for name, method of window.tool[toolName].events
-			@paper.tool[name] = new Methodder window.tool[toolName].events[name], @
+			@paper.tool[name] = new Methodder method, @
 		window.tool[toolName].init.call @ if window.tool[toolName].init?
 		@tool = toolName
 

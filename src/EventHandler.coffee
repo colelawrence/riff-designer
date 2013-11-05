@@ -13,3 +13,5 @@ class EventHandler
 		@app.project.closeRiff()
 	editModule:(name) =>
 		@app.project.getActiveRiff().editModule(name)
+	setModuleEditingTool:(name,editingTool) =>
+		@app.project.getActiveRiff().getModule(name).setEditingTool(editingTool)

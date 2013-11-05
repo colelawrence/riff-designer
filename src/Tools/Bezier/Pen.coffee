@@ -1,7 +1,8 @@
 #_require ../../Initiallizer.coffee
 
 window.tool.Pen =
-name: "PenTool"
+name: "Pen"
+sprite: "pen_png"
 data: {}
 events:
 	onMouseDown: (event) ->

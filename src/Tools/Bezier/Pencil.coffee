@@ -1,7 +1,8 @@
 #_require ../../Initiallizer.coffee
 
 window.tool.Pencil =
-name: "PencilTool"
+name: "Pencil"
+sprite: "pencil_png"
 data: {}
 init: ->
 	@data.guide = new @paper.Path.Line
@@ -28,7 +29,6 @@ events:
 		@path.simplify(10)
 		# Select the path, so we can see its segments:
 		@path.fullySelected = true
-		@setEditingTool "Pen"
 	onMouseMove: (event) ->
 		@data.guide.position.x = event.point.x
 		if @path?

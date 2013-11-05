@@ -12,6 +12,8 @@ class RiffView extends Node
 		@openRiff()
 	getModules:()=>
 		@getChildren()
+	getModule:(name)=>
+		@getChild name
 	editModule:(name)=>
 		@setActiveChild(name)
 		@getChild(name).editModule()
@@ -21,7 +23,7 @@ class RiffView extends Node
 		@closeRiff()
 		for module in @getModules()
 			module.$().show()
-	playRiff: (rate = 8000, seconds = 1, hz = 200) =>
+	playRiff: (rate = 12000, seconds = 1, hz = 200) =>
 		waveform = null
 		modifiers = []
 		for module in @getModules()

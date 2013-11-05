@@ -14,3 +14,8 @@ class RiffModule extends Node
 			@paper.setup(canvas)
 			@isInit = true
 			@init()
+			if @tools?
+				for tool in @tools
+					@$().find(".tools").append ich.Button \
+						onclick:"evt.setModuleEditingTool('#{@name}','#{tool}')",
+						sprite:window.tool[tool].sprite
