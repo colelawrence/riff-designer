@@ -101,39 +101,45 @@ textarea {
 .ichTemplate {display:none;}
 .no-select {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 
-.button { width:32px; height: 32px; border: 4px solid rgba(32,32,32,0); background-repeat: none}
-.button:hover { cursor:pointer; border-color: rgba(32,32,32,1);}
+.button { width:32px; height: 32px;
+    border: 4px solid rgba(32,32,32,0); background-repeat: none}
+.button:hover { cursor:pointer;
+    border-color: rgba(32,32,32,1);}
 
 .project-view {width:800px; float:left;}
 .project-view .header { width:100%; height: 300px;
     background-color: #E0EFF1;}
-.project-view .toolbar {height:40px; background-color: #0088BD}
+.project-view .toolbar {height:40px;
+    background-color: #0088BD}
 .project-view .container { width:100%;}
-.project-view .container .riff-view-open { width:100%; height:40px; 
-    background-color: #dbdbdb;}
 
-.project-view .container .riff-view-open .preview {float:left;}
-.project-view .container .riff-view-open .title {float:left;}
-.project-view .container .riff-view-open .edit { float:right;}
-.project-view .container .riff-view-open.active .edit { background-color: #999 }
+.riff-view-open { width:100%; height:40px; 
+    background-color: #dbdbdb;}
+.riff-view-open .preview {float:left;}
+.riff-view-open .title {float:left;}
+.riff-view-open .edit { float:right;}
+.riff-view-open.active .edit { background-color: #999 }
 
 .riff-view {width:800px; float:left;}
-.riff-view .header { height:60px;
+.riff-view .header { height:60px; 
     background-color: #7DB4B5;}
 .riff-view .header .back {width:60px; height:60px; float:left;
     border-radius: 30px; background-color: white}
-.riff-view .header .title { color:white;}
+.riff-view .header .title { 
+    color:white;}
 .riff-view .container { width:100%;
     background-color: #dbdbdb}
-.riff-view .container .riff-module { width:100%; height:80px; position:relative;
-background-color: #f5f5f5}
-.riff-view .container .riff-module .buttons {float: left; width:40px; height:100%;}
-.riff-view .container .riff-module .preview {height:100%; float:left;}
-.riff-view .container .riff-module .preview canvas {width:720px; height:80px;} 
-.riff-view .container .riff-module .edit {float:right;}
-.riff-view .container .riff-module .edit:hover {cursor:pointer;}
-.riff-view .container .riff-module.under-construction {height:300px;}
-.riff-view .container .riff-module.under-construction .preview canvas {height:300px;}
+.riff-module { width:100%; height:80px; position:relative;
+    background-color: #f5f5f5}
+.riff-module .buttons {float: left; width:40px; height:100%;}
+.riff-module .preview {height:100%; float:left;
+    background-color:white;box-shadow: 0 0 10px rgba(0,0,0,.3)}
+.riff-module .preview canvas {width:720px; height:80px;} 
+.riff-module .buttons {float:right;}
+.riff-module .buttons .tools {display:none;}
+.riff-module.under-construction .buttons .tools {display:block;}
+.riff-module.under-construction {height:300px;}
+.riff-module.under-construction .preview canvas {height:300px;}
 
 
 

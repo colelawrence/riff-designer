@@ -22,13 +22,17 @@ block content
 				.title Project
 			.container
 				#RiffModule.ichTemplate
-					.riff-module(id="{{moduleName}}")
+					.riff-module(id="{{moduleName}}").no-select
 						//-.title {{moduleName}}
-						.buttons
+						.settings.buttons
 						.preview
-							canvas.no-select
-						.edit.button(onclick="evt.editModule('{{moduleName}}');")
-							.inscribe_png
+							canvas
+						.edit.buttons
+							.edit.button(onclick="evt.editModule('{{moduleName}}');")
+								.inscribe_png
+							.edit.tools
+								
+
 
 block scripts
 	script(src='js/lib/ICanHaz.min.js')
