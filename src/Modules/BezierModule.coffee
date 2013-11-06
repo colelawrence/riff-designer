@@ -6,7 +6,6 @@ class BezierModule extends RiffModule
 		@path = null
 		@Xaxis = null
 		@tool = "Pencil"
-		@data = {}
 		@tools = ["Pen", "Pencil"]
 	setEditingTool: (toolName) =>
 		console.log @name, toolName
@@ -28,7 +27,7 @@ class BezierModule extends RiffModule
 			null
 		else
 			intersections[0].point.y
-	init: =>
+	initModule: =>
 		@Xaxis = new @paper.Path.Line
 			from:[0, 0]
 			to:[0, @paper.view.viewSize.height]

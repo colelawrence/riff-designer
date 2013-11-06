@@ -5,7 +5,7 @@ class SpeedModifier extends BezierModule
 		@options.length ?= 1
 		@options.lowerBounds ?= .1
 		@options.upperBounds ?= 2
-		@options.sampleRate ?= 8000
+		@options.rate ?= 8000
 		@options.hz ?= 80
 		@heightRange = @options.upperBounds - @options.lowerBounds
 		super "SpeedMod", @options
@@ -22,7 +22,7 @@ class SpeedModifier extends BezierModule
 			result.step = @options.hz
 		# step = hz
 		result.hz = result.step
-		result.samples = @options.sampleRate / result.hz
+		result.samples = @options.rate / result.hz
 		result.step = @paper.view.size.width / @options.length / result.step
 		result
 	mod: (sound) =>

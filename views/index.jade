@@ -14,14 +14,27 @@ block content
 			.container
 				#RiffViewOpen.ichTemplate
 					.riff-view-open(id="{{riffName}}")
-						.preview.button(onclick="evt.playRiff('{{riffName}}');")
-							.play_png
-						.title {{riffName}}
-						.edit.button(onclick="evt.openRiff('{{riffName}}');")
-							.inscribe_png
+						div(style="height:40px")
+							.preview.button(onclick="evt.playRiff('{{riffName}}');")
+								.play_png
+							.title {{riffName}}
+							.edit.button(onclick="evt.openRiff('{{riffName}}');")
+								.inscribe_png
+							.settings.button(onclick="$(this.parentNode.parentNode).toggleClass('setting')")
+								.settings_png
+						.settings-view
+							.button.checkbox(onclick="$(this).toggleClass('checked')")
+								.loop_png
+							span Length(s)
+							input.length(type="number",value="3",min=".10",max="20.00",step="0.01")
+							span Hz
+							input.hz(type="number",value="100",min="1",max="1000",step="1")
+							span Sample Rate
+							input.rate(type="number",value="11000",min="4000",max="88000",step="100")
 		#RiffView.riff-view
 			.header
-				.back(onclick="evt.closeRiff();")
+				.back.button(onclick="evt.closeRiff();")
+					.exit_png
 				.title Project
 			.container
 				#RiffModule.ichTemplate

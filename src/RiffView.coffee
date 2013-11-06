@@ -7,8 +7,15 @@
 class RiffView extends Node
 	constructor:(@riffViewSelector) ->
 		super(@riffViewSelector, "RiffViewOpen")
+		@options = {}
+	init:()=>
+		@options = {
+			length: @$().find(".length").val()
+			hz: @$().find(".hz").val()
+			rate: @$().find(".rate").val()
+		}
 		@addChild new Waveform()
-		@addChild new SpeedModifier({length:2, sampleRate:8000})
+		@addChild new SpeedModifier(@options)
 		@openRiff()
 	getModules:()=>
 		@getChildren()
@@ -23,15 +30,18 @@ class RiffView extends Node
 		@closeRiff()
 		for module in @getModules()
 			module.$().show()
-	playRiff: (rate = 12000, seconds = 1, hz = 200) =>
+	playRiff: () =>
+		@options.length= @$().find(".length").val()
+		@options.hz= @$().find(".hz").val()
+		@options.rate= @$().find(".rate").val()
+		console.log @options
 		waveform = null
 		modifiers = []
 		for module in @getModules()
 			if module.getRiffData?
 				waveform = module
 			else
-				if module.isInit
-					modifiers.push module
+				modifiers.push module
 		if waveform?
 			data = null
 			if modifiers.length isnt 0
@@ -40,18 +50,18 @@ class RiffView extends Node
 					workingData = mod.mod workingData
 				data = workingData
 			else
-				data = waveform.getRiffData rate
+				data = waveform.getRiffData @options.rate
 				if data?
 					data_ = []
-					for [1..hz]
+					for [1..@options.hz]
 						data_.concat data
 					data = []
-					for [1..seconds]
+					for [1..@options.length]
 						data.concat data_
 			if data?
 				window.audio = new Audio()
 				wave = new RIFFWAVE()
-				wave.header.sampleRate = rate
+				wave.header.sampleRate = @options.rate
 				wave.Make(data)
 				window.audio.src = wave.dataURI
 				window.audio.play()

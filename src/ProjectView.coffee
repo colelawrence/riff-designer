@@ -8,6 +8,8 @@ class ProjectView extends Node
 		riff = @addChild new RiffView(@riffViewSelector)
 	openRiff:(name)=>
 		@setActiveChild(name)
+		$("#RiffView .header .title").text(name)
+		$("#RiffView").removeClass("hidden")
 		@getChild(name).openRiff()
 	playRiff:(name)=>
 		@getChild(name).playRiff()
@@ -15,4 +17,6 @@ class ProjectView extends Node
 		@getActiveChild()
 	closeRiff: =>
 		@getActiveChild().closeRiff()
+		$("#RiffView .header .title").text("")
+		$("#RiffView").addClass("hidden")
 		@setActiveChild(null)

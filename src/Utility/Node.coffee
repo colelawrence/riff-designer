@@ -18,6 +18,7 @@ class Node
 		@children[child.name] = child
 		if @containerSelector?
 			$(@containerSelector).append child.getTemplate()
+		child.init() if child.init?
 		@setActiveChild(child.name)
 	getChild: (name) =>
 		@children[name]
