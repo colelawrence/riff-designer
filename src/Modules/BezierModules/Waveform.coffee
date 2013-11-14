@@ -3,8 +3,20 @@
 class Waveform extends BezierModule
 	constructor: ->
 		super("Waveform")
-		@Xaxis = @paper
+		@rigidCurve = null
+
+	getRigidData: (samples) =>
+		if not @rigidCurve?
+			@changed()
+		@rigidCurve.getData(samples)
+	changed:()=>
+		points = []
+		for x in [0..@paper.view.viewSize.width]
+			points.push [x, @getYOnPath(x)]
+		@rigidCurve = new RigidCurve @paper.view, points
+
 	getRiffData: (samples) =>
+		@getRigidData samples
 		little = @path.firstSegment.point.x
 		big = @path.lastSegment.point.x
 		range = big

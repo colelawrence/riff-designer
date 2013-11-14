@@ -29,6 +29,7 @@ events:
 		@path.simplify(10)
 		# Select the path, so we can see its segments:
 		@path.fullySelected = true
+		@changed()
 	onMouseMove: (event) ->
 		@data.guide.position.x = event.point.x
 		if @path?

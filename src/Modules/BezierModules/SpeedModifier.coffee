@@ -9,7 +9,6 @@ class SpeedModifier extends BezierModule
 		@options.hz ?= 80
 		@heightRange = @options.upperBounds - @options.lowerBounds
 		super "SpeedMod", @options
-		window.gg = @
 
 	heightToHz: (h) =>
 			@options.hz * (((@paper.view.size.height - h) / @paper.view.size.height) * @heightRange + @options.lowerBounds)
@@ -29,10 +28,8 @@ class SpeedModifier extends BezierModule
 		console.log "Modding"
 		data = []
 		step = @getStep(0).step
-		console.log i, step, @paper.view.size.width
 		for i in [0..@paper.view.size.width] by step
 			result = @getStep(i)
-			console.log i, step, result.samples
 			data = data.concat sound.getRiffData(result.samples)
 			step = result.step
 		console.log data.length

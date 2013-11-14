@@ -10,6 +10,7 @@ class RiffModule extends Node
 	init: () =>
 		canvas = @$().find("canvas")[0]
 		@paper.setup(canvas)
+		console.log(canvas)
 		if @tools?
 			for tool in @tools
 				@$().find(".tools").append ich.Button \

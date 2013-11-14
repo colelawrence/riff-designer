@@ -49,3 +49,5 @@ events:
 	
 		if (@data.movePath) 
 			@data.path.position += event.delta; 
+	onMouseUp:(event)->
+		@changed() if @data.segment or @data.movePath

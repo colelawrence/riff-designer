@@ -31,6 +31,7 @@ class RiffView extends Node
 		for module in @getModules()
 			module.$().show()
 	playRiff: () =>
+		start = (new Date()).getTime()
 		@options.length= @$().find(".length").val()
 		@options.hz= @$().find(".hz").val()
 		@options.rate= @$().find(".rate").val()
@@ -64,6 +65,7 @@ class RiffView extends Node
 				wave.header.sampleRate = @options.rate
 				wave.Make(data)
 				window.audio.src = wave.dataURI
+				console.log ((new Date()).getTime()-start)/1000
 				window.audio.play()
 			
 	closeRiff: =>
