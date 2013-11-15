@@ -5,8 +5,16 @@ class BezierModule extends RiffModule
 		super(prefix, options)
 		@path = null
 		@Xaxis = null
+		@rigidCurve = null
 		@tool = "Pencil"
 		@tools = ["Pen", "Pencil", "BezierDebugger"]
+
+	changed:()=>
+		points = []
+		for x in [0..@paper.view.viewSize.width]
+			points.push [x, @getYOnPath(x)]
+		@rigidCurve = new RigidCurve @paper.view, points
+	
 	setEditingTool: (toolName) =>
 		console.log @name, toolName
 		# unset
