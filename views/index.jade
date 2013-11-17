@@ -13,12 +13,12 @@ block content
 					.plus_png
 			.container
 				#RiffViewOpen.ichTemplate
-					.riff-view-open(id="{{riffName}}")
+					.riff-view-open(id="{{id}}")
 						div(style="height:40px")
-							.preview.button(onclick="evt.playRiff('{{riffName}}');")
+							.preview.button(onclick="evt.playRiff('{{id}}');")
 								.play_png
-							.title {{riffName}}
-							.edit.button(onclick="evt.openRiff('{{riffName}}');")
+							.title {{id}}
+							.edit.button(onclick="evt.openRiff('{{id}}');")
 								.inscribe_png
 							.settings.button(onclick="$(this.parentNode.parentNode).toggleClass('setting')")
 								.settings_png
@@ -38,13 +38,13 @@ block content
 				.title Project
 			.container
 				#RiffModule.ichTemplate
-					.riff-module(id="{{moduleName}}").no-select
-						//-.title {{moduleName}}
+					.riff-module(id="{{id}}").no-select
+						//-.title {{id}}
 						.settings.buttons
 						.preview
 							canvas
 						.edit.buttons
-							.button(onclick="evt.editModule('{{moduleName}}');")
+							.button(onclick="evt.editModule('{{id}}');")
 								.inscribe_png
 							.tools
 

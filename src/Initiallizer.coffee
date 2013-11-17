@@ -1,6 +1,3 @@
-#_require Application.coffee
-#_require EventHandler.coffee
-
 window.app = null
 window.evt = null
 window.modules = {}

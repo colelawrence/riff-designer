@@ -1,5 +1,6 @@
 class Node
-	constructor:(@containerSelector, prefix)->
+	constructor:(prefix, @containerSelector="")->
+		# Assign the component's name/id
 		@name = prefix + "-" + Math.floor(Math.random() * 0xFFFFFF).toString(16)
 		@children = {}
 		@activeChildName = null
@@ -18,7 +19,8 @@ class Node
 		@children[child.name] = child
 		if @containerSelector?
 			$(@containerSelector).append child.getTemplate()
-		child.init() if child.init?
+		# setup() is called after the DOM piece is appended
+		child.setup() if child.setup?
 		@setActiveChild(child.name)
 	getChild: (name) =>
 		@children[name]

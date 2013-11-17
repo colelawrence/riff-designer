@@ -1,11 +1,11 @@
 #_require Utility/Node.coffee
 
 class ProjectView extends Node
-	constructor:(@projectViewSelector, @riffViewSelector) ->
-		super(@projectViewSelector, "Proj-View")
+	constructor:(@projectViewSelector, @moduleListSelector) ->
+		super("Proj-View", @projectViewSelector)
 		@newRiff()
 	newRiff:()=>
-		riff = @addChild new RiffView(@riffViewSelector)
+		@addChild new ModuleManager(@moduleListSelector)
 	openRiff:(name)=>
 		@setActiveChild(name)
 		$("#RiffView .header .title").text(name)
