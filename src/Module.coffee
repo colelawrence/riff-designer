@@ -9,10 +9,10 @@ class Module extends Node
 		classUndefinedError=(problem)->
 			console.log "window[#{problem}]() is not a correct type"
 			return new Module("VolumeModifier", "BezierController")
-		try @modifier = window[modifierType] catch(err)
-			classUndefinedError(err)
-		try @controller = window[controllerType] catch(err)
-			classUndefinedError(err)
+		if window[modifierType]? then	@modifier = window[modifierType]
+		else classUndefinedError(err)
+		if window[controllerType]? then	@controller = window[controllerType]
+		else classUndefinedError(err)
 
 		# At this point:
 		# @modifier and @controller are merely unconstructed classes

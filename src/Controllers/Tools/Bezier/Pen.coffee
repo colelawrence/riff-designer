@@ -1,4 +1,4 @@
-#_require ../../Initiallizer.coffee
+#_require ../../../Initiallizer.coffee
 
 window.tool.Pen =
 name: "Pen"
